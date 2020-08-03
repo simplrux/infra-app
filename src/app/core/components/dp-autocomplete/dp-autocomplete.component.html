@@ -1,0 +1,156 @@
+
+
+<p-autoComplete [(ngModel)]="ngModel" [suggestions]="filteredSuggestions" 
+(completeMethod)="filterBrands($event)" [size]="30"
+[minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="colDef.dropDownMode">
+</p-autoComplete>
+
+
+<!-- <div>datasource.length={{ datasource.length }}</div>
+<div *ngIf="ArrTable_Keys">datasource[0]={{ datasource[0] | json }}</div> -->
+
+<!-- [name]="definition.name" -->
+
+
+<!-- [field]="definition.field" -->
+<!-- כל האפשרויות -->
+<!-- <p-autoComplete
+  *ngIf="definition"
+  #autoComplete
+  [name]="definition.name"
+  [(ngModel)]="value"
+  [suggestions]="filteredData"
+  (completeMethod)="
+    filterEntity(
+      $event,
+      definition.dp_AutocompleteType,
+      definition.dp_AutocompleteMaxSuggestionsToShow
+    )
+  "
+  (onKeyDown)="onPreventSelectFirstOption($event, definition.dp_AutocompleteType)"
+  [scrollHeight]="definition.scrollHeight"
+  [style]="definition.style"
+  [field]="definition.field"
+  [dropdown]="definition.dropdown"
+  [multiple]="definition.multiple"
+  [dropdownIcon]="definition.dropdownIcon"
+  [minLength]="definition.minLength"
+  [delay]="definition.delay"
+  [completeOnFocus]="definition.completeOnFocus"
+  [inputStyle]="definition.inputStyle"
+  [panelStyle]="definition.panelStyle"
+  [styleClass]="definition.styleClass"
+  [inputStyleClass]="definition.inputStyleClass"
+  [panelStyleClass]="definition.panelStyleClass"
+  [inputId]="definition.inputId"
+  [placeholder]="definition.placeholder"
+  [readonly]="definition.readonly"
+  [disabled]="definition.disabled"
+  [maxlength]="definition.maxlength"
+  [size]="definition.size"
+  [appendTo]="definition.appendTo"
+  [tabindex]="definition.tabindex"
+  [dataKey]="definition.dataKey"
+  [autoHighlight]="definition.autoHighlight"
+  [type]="definition.type"
+  [emptyMessage]="definition.emptyMessage"
+  [required]="definition.required"
+  [autofocus]="definition.autofocus"
+  [forceSelection]="definition.forceSelection"
+  [dropdownMode]="definition.dropdownMode"
+  [baseZIndex]="definition.baseZIndex"
+  [autoZIndex]="definition.autoZIndex"
+  [showTransitionOptions]="definition.showTransitionOptions"
+  [hideTransitionOptions]="definition.hideTransitionOptions"
+  [ariaLabel]="definition.ariaLabel"
+  [ariaLabelledBy]="definition.ariaLabelledBy"
+  [unique]="definition.unique"
+  [autocomplete]="definition.autocomplete"
+> -->
+  <!--
+ 
+-->
+
+  <!-- <div style="display: table-cell;"></div> -->
+
+  <!-- <ng-container *ngFor="let row of rows">
+  <tr *ngFor="let composant of row.composants">
+      <td> {{ composant }} </td>
+      <td> {{ row.nom }} </td>
+  </tr>  
+<ng-container>   -->
+<!-- <style>
+  li :nth-child(1) {width:100px; background-color:yellow !important; font-weight: bold; padding: 1px;} 
+  li :nth-child(2) {width:100px; background-color:red !important;} 
+  li :nth-child(3) {width:180px; background-color: orange !important;} 
+  li :nth-child(4) {width:180px; background-co  lor:palegreen !important;}
+  li :nth-child(5) {width:50px;}
+</style> -->
+
+  <!-- <ng-container *ngIf="definition.dp_AutocompleteType === 1">
+    <ng-template let-datasource let-i="index" pTemplate="item">
+      <div [ngStyle]="i === 0? getStyle(): null" class="cls-t-row">
+        <ng-container *ngFor="let a of ArrTable_Keys; let j=index" >
+          <div class="cls-t-cell" [style]="ArrTable_ColumnsStyle[j]">{{ datasource[a] }}</div>
+        </ng-container>
+      </div>
+    </ng-template>
+  </ng-container> -->
+
+<!-- 
+  <ng-container *ngIf="definition.dp_AutocompleteType === 2">
+    <ng-template let-datasource_val pTemplate="item">
+      <div
+        class="ui-helper-clearfix"
+        [style]="definition.dp_AutocompleteImageContainerStyle"
+      >
+        <img
+          src="{{
+            definition.dp_AutocompleteImagesPath +
+              datasource_val +
+              '.' +
+              definition.dp_AutocompleteImageExtension
+          }}"
+          [style]="definition.dp_AutocompleteImageStyle"
+        />
+        <div [style]="definition.dp_AutocompleteImageTextStyle">
+          {{ datasource_val }}
+        </div>
+      </div>
+    </ng-template>
+  </ng-container> -->
+
+
+
+<!-- 
+
+(onDropdownClick)="filterEntity($event)"
+if i want to show all on chevron-down click
+
+-->
+
+<!--
+[immutable]=definition.immutable 
+-->
+
+<!--
+    autocompleteType =  {{ac_Type}}
+
+    <br><br>
+    <ng-container *ngIf="ac_Type == 1" >
+        case 1
+    </ng-container>
+    <ng-container *ngIf="ac_Type == 2">
+        case 2
+    </ng-container>
+    <ng-container *ngIf="ac_Type == 3">
+        case 3
+    </ng-container>
+
+    <br>
+    <br>
+ -->
+
+<!--
+  [minLength] - the minimun chars to start autocomplete  
+-->

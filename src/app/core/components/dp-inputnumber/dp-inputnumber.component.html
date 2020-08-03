@@ -1,0 +1,7 @@
+<p-inputNumber [(ngModel)]="ngModelDP != null ? ngModelDP : rowData[columnDefinition.fieldname]"
+[mode]="definition.mode" [min]="definition.min" [max]="definition.max" [maxlength]="definition.maxlength"
+[maxFractionDigits]="definition.maxFractionDigits" [minFractionDigits]="definition.minFractionDigits"
+[currency]="definition.currency" [step]="definition.step" [prefix]="definition.prefix" [suffix]="definition.suffix" 
+[useGrouping]="definition.useGrouping" [format]="definition.format"></p-inputNumber>
+<!-- bug negative https://github.com/primefaces/primeng/issues/8919 -->
+<!-- <p-inputNumber [ngModel]="100" mode="decimal" minValue="-9999999999.99"></p-inputNumber> -->

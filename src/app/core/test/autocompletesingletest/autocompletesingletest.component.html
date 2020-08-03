@@ -1,0 +1,9 @@
+
+
+<dp-autocomplete 
+[definition]="autocompleteDefinition6" 
+[datasource]="data_for_ac6"
+[(ngModel)]="external_data_selected_6"               
+></dp-autocomplete>
+
+<br><br><div>Selected:<div class='s'> {{ !external_data_selected_6 ? '' : (external_data_selected_6 | json)  }}</div></div>

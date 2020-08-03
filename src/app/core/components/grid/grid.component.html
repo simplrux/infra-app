@@ -1,0 +1,55 @@
+
+<!-- dataKey="id" styleClass="ui-table-customers" [rowHover]="true" -->
+<!-- [filterDelay]="0" [globalFilterFields]="['name','country.name','representative.name','status']"> -->
+<!-- [(selection)]="selectedCustomers"  dataKey="id" [rowHover]="true" -->
+<!-- [rowsPerPageOptions]='definition.rowsPerPageOptions'  -->
+<!-- [rowsPerPageOptions]='[10,25,50]'  -->
+<!-- currentPageReportTemplate='Showing &#123;first&#125; to &#123;last&#125; of &#123;totalRecords&#125; entries'> -->
+<!-- [filterDelay]="0" [globalFilterFields]="['name','country.name','representative.name','status']"> -->
+    <!-- <ng-template pTemplate="caption">
+        List of Cars
+        <div class="ui-table-globalfilter-container" [style.backgroundColor]="bgColor" >
+            <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Global Search" />
+        </div>
+    </ng-template> -->
+<p-table #dt 
+    [columns]="definition.columns" 
+    [value]="datasource" 
+    [dataKey]="definition.dataKey" 
+    [rowHover]="definition.rowHover"
+    [rows]="definition.rows" 
+    [showCurrentPageReport]="true" 
+    [rowsPerPageOptions]="definition.rowsPerPageOptions"
+    [paginator]="definition.paginator" 
+    [currentPageReportTemplate]="definition.currentPageReportTemplate"
+    [editMode]="definition.editMode">
+    
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor = "let column of definition.columns" pSortableColumn=column.fieldname>
+                {{column.headername}} <p-sortIcon field=column.fieldname></p-sortIcon>
+            </th>
+        </tr>  
+    </ng-template>    
+    <ng-template pTemplate="body" let-row let-columns="columns" *ngIf="definition.editMode == 'row'">
+        <tr [pEditableRow]="row">        
+            <td *ngFor="let column of columns">                
+                <app-cell [row]="row" [column]="column"></app-cell> 
+            </td>
+        </tr>        
+    </ng-template> 
+
+    <ng-template pTemplate="body" let-row let-columns="columns" *ngIf="definition.editMode == 'cell'">
+        <tr>        
+            <td *ngFor="let column of columns" pEditableColumn>
+                 <app-cell [row]="row" [column]="column"></app-cell>
+            </td>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8" style="text-align:left">No results found.</td>
+        </tr>
+    </ng-template>
+</p-table>

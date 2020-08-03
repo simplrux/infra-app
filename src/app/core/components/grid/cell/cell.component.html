@@ -1,0 +1,26 @@
+<p-cellEditor [ngSwitch]="column.type">
+    <ng-template pTemplate="input">
+        <dp-inputtext *ngSwitchCase="gridColumnTypeEnum.span" [rowData]="row" [columnDefinition]="column"></dp-inputtext>
+        <dp-checkbox *ngSwitchCase="gridColumnTypeEnum.checkbox" [rowData]="row" [columnDefinition]="column"></dp-checkbox>
+        <img *ngSwitchCase="gridColumnTypeEnum.image" class="my-center-text" src="{{row[column.fieldname]}}"
+             title="{{row[column.fieldname.concat('_tooltip')]}}" width="{{column.width}}" height="{{column.height}}">
+        <dp-inputnumber *ngSwitchCase="gridColumnTypeEnum.inputnumber" [rowData]="row" [columnDefinition]="column">
+        </dp-inputnumber>
+        <dp-autocomplete [rowData]="row" [colDef]="column" 
+        *ngSwitchCase="gridColumnTypeEnum.autocomplete"></dp-autocomplete>
+        <!-- <dp-autocomplete *ngSwitchCase="gridColumnTypeEnum.dropdown" [rowData]="row" [columnDefinition]="column"></dp-autocomplete> -->
+        <dp-calendar *ngSwitchCase="gridColumnTypeEnum.calendar" [rowData]="row" [columnDefinition]="column"></dp-calendar>
+    </ng-template>
+    <ng-template pTemplate="output">
+        <span *ngSwitchCase="gridColumnTypeEnum.span">{{row[column.fieldname]}}</span>
+        <span *ngSwitchCase="gridColumnTypeEnum.calendar">{{row[column.fieldname] | date: 'dd/MM/yyyy'}}</span>
+        <span *ngSwitchCase="gridColumnTypeEnum.inputnumber">{{row[column.fieldname]}}</span>
+        <dp-checkbox *ngSwitchCase="gridColumnTypeEnum.checkbox" [rowData]="row" [columnDefinition]="column"></dp-checkbox>
+        <img *ngSwitchCase="gridColumnTypeEnum.image" class="my-center-text" src="{{row[column.fieldname]}}"
+             title="{{row[column.fieldname.concat('_tooltip')]}}" width="{{column.width}}" height="{{column.height}}">
+        <!-- <span *ngSwitchCase="gridColumnTypeEnum.dropdown">{{row[column.fieldname]}}</span> -->
+        <dp-autocomplete [rowData]="row" [colDef]="column" 
+        *ngSwitchCase="gridColumnTypeEnum.autocomplete"></dp-autocomplete>
+
+    </ng-template>
+</p-cellEditor>
